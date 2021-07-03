@@ -1,0 +1,25 @@
+small{
+    color: #8414ee;
+}
+span{
+    color: #fff;
+}
+.blog{
+    background-color: gray;
+    border: 5px solid #333;
+    border-radius: 10px;
+    padding: 20px;
+    width: 50%;
+    height: auto;
+    margin: 30px auto;
+}
+.blog-title{
+    text-align: center;
+    font-size: 25px;
+}
+.blog p{
+    text-align: justify;
+}
+.main_menu p{
+    display: inline;
+}
