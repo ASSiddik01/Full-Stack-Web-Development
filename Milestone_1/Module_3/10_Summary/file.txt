@@ -1,0 +1,37 @@
+01. git init = git instialization
+02. git config --global user.name "user name" = set global user name
+03. git config --global user.email "email name" = set global email name
+04. git config --list = Show user name and email 
+05. clear = clean tarminal
+06. git status = show untracked file
+07. git add "file name" = staging file
+08. git add --all\. = staging all file
+09. git commit = for commiting about your file 
+10. git diff = see the changes
+11. git commit -am = for all file commit
+12. git log = see a to z work
+13. git show "commit number" what are doing this commmit
+14. git chackout "commit number" = back to pervious code
+15. git chackout master = back to last commit
+16. git chackout master -f = back to last commit it one file is changed
+17. git reset --soft 'commit number" = soft reset for remove only commit message
+18. git reset --Hard 'commit number" = hard reset
+19. git commit --amend = add same previous commit both file
+20. git reflog = show the all changes
+21. git stash = remove the recent work but not delete
+22. git stash pop or apply = recover the line which is remove by the git stash
+22. git stash list = show the all stash * last stash start with 0 then 1,2,.....
+23. git clean -f -n = remove the untracked file (-n is the show which file will be remove)
+24. git remote add "romote name" "git url" = add remote url in your project git remote add origin 
+25. git remote show = show all remote
+26. git remote show "remote name" = show the remote url
+27. git push "remote name" "branch name" = to upload the code into server
+28. git pull "remote name" "branch name" = to download the code into local mechine
+29. git clone "git repo link" = use for someone's repo clone into my local mechine
+30. .gitignore = ignore the some file which is not to add git
+31. git branch "type new branch name" = make new branch
+32. git merge "branch name" = for merge someone's code
+# ~/.bashrc = use for git alias (better is make a alias file in home dir ~/."file name")
+# alias 'shortcut'='"git code"'
+# test -r ~/."file name" && source ~/."file name" = add ~/.bashrc in last line
+
