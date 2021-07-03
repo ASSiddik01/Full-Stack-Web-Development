@@ -1,0 +1,9 @@
+Fix some pblm
+
+change git url
+
+git remote set-url "here type git url"
+
+git branch "type new branch name" = make new branch
+
+git merge "branch name" = for merge someone's code
