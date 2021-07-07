@@ -1,0 +1,246 @@
+/* Base CSS */
+body{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.display_flex {
+    display: flex;
+    margin-bottom: 100px;
+}
+
+.half_width {
+    width: 40%;
+    margin-left: 5%;
+    padding-left: 2%;
+}
+
+
+.anchor_button {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    background-image: linear-gradient(100deg, #f089d2, #fc49c1);
+    color: #fff;
+    padding: 15px 35px;
+    border-radius: 50px;
+}
+.anchor_button:hover {
+    color: #000;
+}
+
+.half_width img {
+    width: 100%;
+}
+
+
+p{
+    line-height: 160%;
+    color: #828282;
+    margin-bottom: 50px;
+}
+
+
+.pink_color {
+    color: #f089d2;
+}
+
+/* Header CSS */
+
+#header_top {
+    background-image: linear-gradient(100deg, #f089d2, #fc49c1);
+    color: #fff;
+    height: 60px;
+}
+
+#header_top div {
+    display: inline-block;
+}
+
+.logo {
+    padding-left: 10px;
+}
+.black_color{
+    color: #000;
+}
+
+
+.mainmenu {
+    margin-left: 22%;
+    margin-right: 20%;
+}
+.mainmenu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.mainmenu ul li {
+    display: inline-block;
+}
+
+.mainmenu ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 0px 20px;
+    font-weight: 600;
+}
+.mainmenu ul li a:hover {
+    color: #333;
+}
+
+.top_left_area h1 {
+    font-size: 60px;
+    text-transform: uppercase;
+    line-height: 130%;
+    color: #575757;
+}
+
+.top_left_area p {
+    font-size: 20px;
+    font-weight: 600;
+    
+}
+
+#banner_top {
+    margin-top: 30px;
+}
+
+/* About Area CSS */
+#about {
+    background-image: url(img/banner.jpg);
+    background-repeat: no-repeat;
+}
+
+.about_right h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 54%;
+    color: #707070;
+}
+
+.about_right h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 54%;
+    color: #707070;
+}
+
+.about_right p {
+    color: #18191f;
+    font-size: 18px;
+    margin-bottom: 50px;
+}
+
+.about_right {
+    margin-top: 100px;
+}
+
+/* Recepi Area CSS */
+
+section#receips h2, section#receips p {
+    text-align: center;
+    width: 40%;
+    margin-left: 30%;
+}
+
+.section_title h2 {
+    color: #676767;
+    font-size: 36px;
+}
+
+.section_title {
+    text-align: center;
+    width: 60%;
+    margin-left: 20.33%;
+    margin-bottom: 50px;
+}
+
+.single_receips {
+    width: 33.33%;
+    height: 528px;
+    margin: 0 40px;
+    border: 15px solid #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 15px 2px #ddd;
+}
+
+.single_receips img {
+    width: 100%;
+    height: 256px;
+}
+
+/* Contact Form CSS */
+
+#contact_form div {
+    width: 50%;
+    float: left;
+}
+
+section#contact_form {
+    margin-top: 100px;
+    box-shadow: 0 0 10px #ddd;
+    border-radius: 30px;
+}
+
+input[type=text],input[type=textarea] {
+    height: 20px;
+    width: 45%;
+    border: 2px Solid #333;
+    padding: 2px 5px;
+    border-radius: 5px;
+}
+
+input[type=email] {
+    width: 93%;
+    height: 20px;
+    border: 2px Solid #333;
+    padding: 2px 5px;
+    border-radius: 5px;
+}
+
+textarea{
+    border: 2px Solid #333;
+    padding: 2px 5px;
+    border-radius: 5px;
+    width: 600px;
+}
+
+.form_right_area h1 {
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+.form_right_area h4 {
+    margin-bottom: 10px;
+}
+
+.form_left_area img {
+    height: 100%;
+    width: 100%;
+    border-radius: 30px;
+}
+
+.form_right_area {
+    padding-left: 5%;
+}
+
+
+/* Footer CSS */
+footer {
+    background-image: linear-gradient(100deg, #f088d2, #fc4ac2);
+    text-align: center;
+    padding: 5px;
+}
+
+.white_color , footer p,#header_top p {
+    color: #fff;
+}
+footer p{
+    margin-bottom: 20px;
+}
