@@ -1,0 +1,40 @@
+nav ul {
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: violet;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+.dropdown {
+    display: none;
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+
+nav ul li ul {
+    position: absolute;
+    background: antiquewhite;
+    padding: 0;
+}
+
+nav ul li ul li a {
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li ul li {
+    margin-left: 0;
+    padding: 10px 10px;
+}
