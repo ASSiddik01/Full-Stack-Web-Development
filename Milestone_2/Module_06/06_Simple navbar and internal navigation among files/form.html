@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <h1>Form area</h1>
+    <form action="">
+        <p>Name: <input type="text" placeholder="type your name" name="name" id=""> </p>
+        <p>Name: <input type="email" placeholder="type your email" name="email" id=""> </p>
+        <fieldset>
+            <legend>Select Food</legend>
+                <p><label for="biriyani"><input type="radio" name="food" id="biriyani"> Biriyani</label></p>
+                <p><label for="fried_rice"><input type="radio" name="food" id="fried_rice">Fried Rice</label></p>
+                <p><label for="pizza"><input type="radio" name="food" id="pizza">Pizza</label></p>
+                <p><label for="bargur"><input type="radio" name="food" id="bargur">Burgar</label></p>
+        </fieldset>
+        <fieldset> 
+            <legend>Select Drinks</legend>
+            <p><label for="borhani"><input type="checkbox" name="drinks" id="borhani">Borhani</label></p>
+            <p><label for="coke"><input type="checkbox" name="drinks" id="coke">Coke</label></p>
+            <p><label for="7up"><input type="checkbox" name="drinks" id="7up">7up</label></p>
+        </fieldset>
+        <p>
+            Special Order <br>
+            <textarea name="your order" id="" cols="30" rows="10"></textarea>
+        </p>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+</body>
+</html>
