@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        @keyframes sliding {
+            0%{
+                background-color: blueviolet;
+                left: 0;
+            }
+
+            100%{
+                background-color: brown;
+                left: 500px;
+            }
+            
+        }
+        .box{
+            height: 300px;
+            width: 600px;
+            background-color: gold;
+        }
+        .ball{
+            background-color: blueviolet;
+            height: 100px;
+            width: 100px;
+            border-radius: 50px;
+            position: relative;
+            animation: sliding 3s ease-in-out .5s infinite alternate ;
+            animation-play-state: running;
+        }
+    </style>
+</head>
+<body>
+    <h1>Make a Ball Animation</h1>
+    <div class="box">
+        <div class="ball"></div>
+    </div>
+</body>
+</html>
