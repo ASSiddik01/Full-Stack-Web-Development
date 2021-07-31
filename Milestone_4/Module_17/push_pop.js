@@ -7,10 +7,10 @@ console.log(number);
 number.pop(); //remove element in last
 console.log(number);
 
-number.unshift(63); //add element in last
+number.unshift(63); //add element in first
 console.log(number);
 
-number.shift(); //remove element in last
+number.shift(); //remove element in first
 console.log(number);
 
 
