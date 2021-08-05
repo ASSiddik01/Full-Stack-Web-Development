@@ -9,5 +9,5 @@ function juiceKhabo(taka){
 
 var money =200;
 
-var juice = juiceKhabo(money)
+var juice = juiceKhabo(money);
 console.log("Ai now Juice",juice,"ta");
