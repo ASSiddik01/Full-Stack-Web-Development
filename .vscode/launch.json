@@ -7,11 +7,11 @@
         {
             "type": "pwa-node",
             "request": "launch",
-            "name": "Launch Program",
+            "name": "JS Debug",
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${file}/Milestone_3/Module_15.5/jaan.js"
+            "program": "${file}"
         }
     ]
 }
