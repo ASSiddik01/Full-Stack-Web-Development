@@ -26,7 +26,11 @@
     </section>
 
     <script>
-        console.log(document.body);
+        const student = {name:"Shama",age:23};
+        const blogTitles = document.getElementsByTagName('h3');
+        for (const blogTitle of blogTitles){
+            console.log(blogTitle.innerText);
+        }
     </script>
 </body>
 </html>
