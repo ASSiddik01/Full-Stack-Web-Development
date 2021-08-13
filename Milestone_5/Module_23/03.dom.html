@@ -57,6 +57,22 @@
         const blogs2 = document.getElementById('blogs');
         blogs2.setAttribute('title',"This tooltip add by JS");
 
+        // Create element 
+        const article = document.createElement("article");
+        article.classList.add("bolg");
+
+        const h3 = doucment.createElement("h3");
+        h3.innerText = "JavaScript Blog";
+        const p = document.createElement("p");
+        p.innerText = "This blog is added by Javaxcript"
+
+        article.appendChild(h3);
+        article.appendChild(p);
+
+        const blogSection = document.getElementById("blogs")
+        blogSection.appendChild(article);
+
+
     </script>
 </body>
 </html>
