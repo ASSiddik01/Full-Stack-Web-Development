@@ -12,7 +12,7 @@
     </header>
     <section>
         <artical>
-            <h3>blog-1</h3>
+            <h3 id="first_title">blog-1</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, dolorem harum. Illum, enim quaerat molestiae commodi doloremque eum. Dolorem, est.</p>
         </artical>
         <artical>
@@ -31,6 +31,9 @@
         for (const blogTitle of blogTitles){
             console.log(blogTitle.innerText);
         }
+        const first_title = document.getElementById('first_title');
+        first_title.style.color="red";
+
     </script>
 </body>
 </html>
