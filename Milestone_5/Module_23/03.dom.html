@@ -5,34 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        /* .blog{
+            border: 2px solid red;
+        } */
+    </style>
 </head>
 <body>
     <header>
         <h1>This is my blog</h1>
     </header>
-    <section>
-        <artical>
-            <h3 id="first_title">blog-1</h3>
+    <section id="blogs">
+        <article class="blog" >
+            <h3 id="first_title" class="blog_title" >blog-1</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, dolorem harum. Illum, enim quaerat molestiae commodi doloremque eum. Dolorem, est.</p>
-        </artical>
-        <artical>
-            <h3>blog-2</h3>
+        </article>
+        <article class="blog" >
+            <h3  class="blog_title" >blog-2</h3>
             <p>Corporis numquam ea dicta minima obcaecati adipisci, amet quibusdam, tempore quasi eveniet soluta illum consectetur? Maxime vitae quod quasi officiis!</p>
-        </artical>
-        <artical>
-            <h3>blog-3</h3>
+        </article>
+        <article class="blog" >
+            <h3 class="blog_title" >blog-3</h3>
             <p>Aliquam molestiae adipisci, pariatur soluta repudiandae sapiente hic porro, cupiditate nisi quasi asperiores! Dicta reiciendis quis, minima quasi in unde.</p>
-        </artical>
+        </article>
     </section>
 
     <script>
         const student = {name:"Shama",age:23};
+
+        // get elements by TagName
         const blogTitles = document.getElementsByTagName('h3');
         for (const blogTitle of blogTitles){
             console.log(blogTitle.innerText);
         }
+
+        // get elements by ID
         const first_title = document.getElementById('first_title');
         first_title.style.color="red";
+
+        // get elements by classname 
+        const  blogs = document.getElementsByClassName('blog');
+
+        for (const blog of blogs){
+            blog.style.border="2px solid orange";
+            blog.style.borderRadius="10px";
+            blog.style.margin = "5px";
+            blog.style.padding = "5px";
+        }
 
     </script>
 </body>
