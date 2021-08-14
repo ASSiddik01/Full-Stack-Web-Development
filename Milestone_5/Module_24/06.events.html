@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+    <h1 id="secrateMessage">This is a massage for you</h1>
+    <input type="text" name="" id="deleteConfirm">
+    <button id="deleteButton" disabled>Delete</button>
+
+    <script>
+        document.getElementById('deleteButton').addEventListener('click',function(){
+            document.getElementById('secrateMessage').style.display = "none";
+        });
+
+        document.getElementById('deleteConfirm').addEventListener('keyup',function(event){
+            const deleteBtn = document.getElementById('deleteButton');
+            if(event.target.value == 'delete'){
+                deleteBtn.removeAttribute('disabled');
+            }
+            else {
+                deleteBtn.setAttribute('disabled',true);
+            }
+            
+        });
+    </script>
+</body>
+</html>
