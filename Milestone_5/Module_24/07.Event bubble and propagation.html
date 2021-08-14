@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+</head>
+<body>
+    <section id="section_container">
+        <h1>Event bubble and propagation</h1>
+        <ul id="list_container">
+            <li id="bubble_1">Bubble1</li>
+            <li id="bubble_2">Bubble2</li>
+            <li id="bubble_3">Bubble3</li>
+            <li id="bubble_4">Bubble4</li>
+            <li id="bubble_5">Bubble5</li>
+        </ul>
+    </section>
+
+    <script>
+        document.getElementById('bubble_1').addEventListener('click',function(){
+            console.log('Clicked one');
+            event.stopImmediatePropagation();
+        });
+        document.getElementById('list_container').addEventListener('click',function(){
+            console.log('Clicked ul');
+            event.stopImmediatePropagation();
+        });
+        document.getElementById('section_container').addEventListener('click',function(){
+            console.log('Clicked Section');
+        });
+    </script>
+</body>
+</html>
