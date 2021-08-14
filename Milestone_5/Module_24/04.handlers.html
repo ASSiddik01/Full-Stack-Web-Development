@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Handlers</title>
+</head>
+<body>
+    <p id="text"></p>
+    <input id="filed" type="text">
+    <button id="update">Update</button>
+    <button id="functionButton" onclick="buttonFunction()">Function Button</button#>
+    <button id="directButton">Direct Button</button>
+
+    <script>
+        // by function
+        const handleFunction = document.getElementById('text');
+        function buttonFunction(){
+            handleFunction.innerText = 'This is function button text';
+        };
+
+        // by direct
+        document.getElementById('directButton').addEventListener('click',function(){
+            const handleDirect = document.getElementById('text');
+            // console.log(handleDirect)
+            handleDirect.innerText = 'This is direct button text';
+        })
+
+        //direct
+        document.getElementById('update').addEventListener('click',function(){
+            const textFiled = document.getElementById('filed');
+            const inputFiled = document.getElementById('text');
+            inputFiled.innerText = textFiled.value;
+            textFiled.value = '';
+
+        })
+    </script>
+</body>
+</html>
