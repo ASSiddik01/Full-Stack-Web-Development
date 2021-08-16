@@ -10,5 +10,12 @@ document.getElementById('depositeButton').addEventListener('click',function(){
 
     amount.value = "";
 
+    // Update total balance
+    const balanceTotal = document.getElementById('totalMoney');
+    const balnceAmount = parseFloat(balanceTotal.innerText);
+
+    const newTotalBalance = balnceAmount+inputAmount;
+    balanceTotal.innerText = newTotalBalance;   
+
     
 })
