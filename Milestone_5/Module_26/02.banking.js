@@ -16,6 +16,28 @@ document.getElementById('depositeButton').addEventListener('click',function(){
 
     const newTotalBalance = balnceAmount+inputAmount;
     balanceTotal.innerText = newTotalBalance;   
+    
+})
 
+// Withdrow
+
+document.getElementById('withdrowButton').addEventListener('click',function(){
+    const drowamount = document.getElementById('withdrowAmount');
+    const newdrowAmount = parseFloat(drowamount.value);
+
+    const withdorwTotal = document.getElementById('withdrowMoney');
+    const oldDrowAmount = parseFloat(withdorwTotal.innerText);
+    
+    const totalDrowAmount = newdrowAmount + oldDrowAmount;
+    withdorwTotal.innerText = totalDrowAmount;
+
+    drowamount.value = "";
+
+    // Update total balance
+    const balanceTotal = document.getElementById('totalMoney');
+    const balnceAmount = parseFloat(balanceTotal.innerText);
+
+    const newTotalBalance = balnceAmount-newdrowAmount;
+    balanceTotal.innerText = newTotalBalance;
     
 })
