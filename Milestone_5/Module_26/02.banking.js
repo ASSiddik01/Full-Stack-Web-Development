@@ -1,6 +1,13 @@
-document.getElementById('depositeButton').addEventListener('click',function(){
+function getInputValue (){
     const amount = document.getElementById('depositeAmount');
     const inputAmount = parseFloat(amount.value);
+    // Clean deposite input value
+    amount.value = "";
+    return inputAmount;
+}
+
+document.getElementById('depositeButton').addEventListener('click',function(){
+    const inputAmount = getInputValue();
 
     const depositeTotal = document.getElementById('depositeMoney');
     const oldAmount = parseFloat(depositeTotal.innerText);
@@ -8,7 +15,6 @@ document.getElementById('depositeButton').addEventListener('click',function(){
     const totalAmount = inputAmount + oldAmount;
     depositeTotal.innerText = totalAmount;
 
-    amount.value = "";
 
     // Update total balance
     const balanceTotal = document.getElementById('totalMoney');
