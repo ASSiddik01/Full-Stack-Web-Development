@@ -14,18 +14,26 @@ function updateTotalFiled(totalFiledId,inputAmount){
     depositeTotal.innerText = totalAmount;
 }
 
+function updateBlance(inputAmount, isAdd){
+    const balanceTotal = document.getElementById('totalMoney');
+    const balnceAmount = parseFloat(balanceTotal.innerText);
+
+    if(isAdd == true){
+        const newTotalBalance = balnceAmount+inputAmount;
+        balanceTotal.innerText = newTotalBalance;
+    } else{
+        const newTotalBalance = balnceAmount-inputAmount;
+    balanceTotal.innerText = newTotalBalance;
+    }
+}
+
 document.getElementById('depositeButton').addEventListener('click',function(){
     const inputAmount = getInputValue('depositeAmount');
 
     updateTotalFiled('depositeMoney', inputAmount)
 
-    // Update total balance
-    const balanceTotal = document.getElementById('totalMoney');
-    const balnceAmount = parseFloat(balanceTotal.innerText);
-
-    const newTotalBalance = balnceAmount+inputAmount;
-    balanceTotal.innerText = newTotalBalance;   
-    
+    // Update total balance  
+    updateBlance(inputAmount,true);
 })
 
 // Withdrow
@@ -33,16 +41,10 @@ document.getElementById('depositeButton').addEventListener('click',function(){
 document.getElementById('withdrowButton').addEventListener('click',function(){
     const newdrowAmount = getInputValue('withdrowAmount');
 
-
-
     updateTotalFiled('withdrowMoney', newdrowAmount)
 
-
     // Update total balance
-    const balanceTotal = document.getElementById('totalMoney');
-    const balnceAmount = parseFloat(balanceTotal.innerText);
 
-    const newTotalBalance = balnceAmount-newdrowAmount;
-    balanceTotal.innerText = newTotalBalance;
+    updateBlance(newdrowAmount,false);
     
 })
