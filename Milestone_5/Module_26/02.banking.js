@@ -1,5 +1,5 @@
-function getInputValue (){
-    const amount = document.getElementById('depositeAmount');
+function getInputValue (inputId){
+    const amount = document.getElementById(inputId);
     const inputAmount = parseFloat(amount.value);
     // Clean deposite input value
     amount.value = "";
@@ -7,7 +7,7 @@ function getInputValue (){
 }
 
 document.getElementById('depositeButton').addEventListener('click',function(){
-    const inputAmount = getInputValue();
+    const inputAmount = getInputValue('depositeAmount');
 
     const depositeTotal = document.getElementById('depositeMoney');
     const oldAmount = parseFloat(depositeTotal.innerText);
@@ -28,8 +28,8 @@ document.getElementById('depositeButton').addEventListener('click',function(){
 // Withdrow
 
 document.getElementById('withdrowButton').addEventListener('click',function(){
-    const drowamount = document.getElementById('withdrowAmount');
-    const newdrowAmount = parseFloat(drowamount.value);
+    const newdrowAmount = getInputValue('withdrowAmount');
+
 
     const withdorwTotal = document.getElementById('withdrowMoney');
     const oldDrowAmount = parseFloat(withdorwTotal.innerText);
@@ -37,7 +37,6 @@ document.getElementById('withdrowButton').addEventListener('click',function(){
     const totalDrowAmount = newdrowAmount + oldDrowAmount;
     withdorwTotal.innerText = totalDrowAmount;
 
-    drowamount.value = "";
 
     // Update total balance
     const balanceTotal = document.getElementById('totalMoney');
