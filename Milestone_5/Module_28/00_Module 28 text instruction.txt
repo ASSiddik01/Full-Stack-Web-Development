@@ -1,0 +1,661 @@
+Module 28
+
+
+
+DOM থেকে দম ফেলে একটু string আর array দেখে ফেলো (মডিউল ২৮)
+
+#module_release #integrate_javascript #module_28
+
+জাভাস্ক্রিপ্ট এর DOM নিয়ে আমরা লাস্ট কয়েকদিন মাতামাতি করতেছিলাম। এইবার এই জিনিস থেকে হালকা একটু মুখ ঘুরিয়ে আমরা জাভাস্ক্রিপ্ট এর দুইটা মেইন জিনিস স্ট্রিং আর এরে এর কিছু সিম্পল কিন্তু কখনো কখনো দরকার পড়ে যেতে পারে। সেই টাইপের কিছু বেসিক ফিচার দেখে ফেলি। জিনিসগুলো জেনে রাখো। দেখে রাখো। নোটস নিয়ে রাখো। প্রাকটিস করে রাখো। সামনেই মাঝে মধ্যে দরকার পড়ে যাবে। সো, মডিউলটা খোলা মাথায় দেখো। প্রাকটিস করে ফেলো। এবং বেশিরভাগ জিনিস তুমি নিজেই ধরে ফেলতে পারবে। 
+
+
+
+.
+
+
+
+স্ট্রিং 
+
+প্রথমেই আছে স্ট্রিং রিলেটেড কয়েকটা জিনিস। সেই জিনিসগুলো তোমাকে জানতেই হবে। 
+
+Course Content
+98%
+Search Lesson
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Text Instruction [Important] : Module 27: Revisit Javascript and work on Shopping Cart
+
+
+27-1 Module Overview and shopping cart increase case count
+
+
+27-2 shopping cart handle decrease and update price
+
+
+27-3 Calculate phone cost using the same shared function
+
+
+27-4 Get all product sub total cost, tax and grand total
+
+
+27-5 Pin matcher overview, Generate pin and display it
+
+
+27-6 Use event bubble to create calculator and clear
+
+
+27-7 Verify match and use function to reduce duplicate
+
+
+27-8 Pin Matcher overview and daily challenge
+
+
+Quiz 27
+
+
+
+
+28-1 String comparison using toLowerCase toUpperCase
+
+
+28-2 Apply Search includes, indexOf, startswith, endswith
+
+
+28-3 How to split, slice, substr, substring, concat, join
+
+
+28-4 Check an Array using isArray, indexOf, includes, concat
+
+
+28-5 Get part of an array and insert elements using slice, splice
+
+
+28-6 Have fun with sort and reverse a javascript array
+
+
+28-7 Unlimited parameters to a function using arguments
+
+
+28-8 Different types of Error object and explore Try-catch
+
+
+28-9 A simple introduction to Date object in JavaScript
+
+
+Quiz 28
+
+Logo
+ Level-4, 34, Awal Centre, Banani, Dhaka
+ Official: web@programming-hero.com
+ Helpline : 01322810867 (Available : 09:00am to 7:00pm)
+Neptune by Programming Hero
+About us
+Success
+Refund policy
+Terms and Conditions
+Privacy Policy
+...
+Copyright © 2021 Programming-hero.com
+
+ 
+Wow! Congratulations!
+You are rewarded for awesome performance
+
+ 2
+Keep Rocking  
+Module 28
+
+
+
+DOM থেকে দম ফেলে একটু string আর array দেখে ফেলো (মডিউল ২৮)
+
+#module_release #integrate_javascript #module_28
+
+জাভাস্ক্রিপ্ট এর DOM নিয়ে আমরা লাস্ট কয়েকদিন মাতামাতি করতেছিলাম। এইবার এই জিনিস থেকে হালকা একটু মুখ ঘুরিয়ে আমরা জাভাস্ক্রিপ্ট এর দুইটা মেইন জিনিস স্ট্রিং আর এরে এর কিছু সিম্পল কিন্তু কখনো কখনো দরকার পড়ে যেতে পারে। সেই টাইপের কিছু বেসিক ফিচার দেখে ফেলি। জিনিসগুলো জেনে রাখো। দেখে রাখো। নোটস নিয়ে রাখো। প্রাকটিস করে রাখো। সামনেই মাঝে মধ্যে দরকার পড়ে যাবে। সো, মডিউলটা খোলা মাথায় দেখো। প্রাকটিস করে ফেলো। এবং বেশিরভাগ জিনিস তুমি নিজেই ধরে ফেলতে পারবে। 
+
+
+
+.
+
+
+
+স্ট্রিং 
+
+প্রথমেই আছে স্ট্রিং রিলেটেড কয়েকটা জিনিস। সেই জিনিসগুলো তোমাকে জানতেই হবে। 
+
+১. স্ট্রিং immutable 
+
+২. স্ট্রিং এর length আছে 
+
+৩. index অনুসারে string এর ভিতরের সব letter কে একসেস করা যায়। 
+
+৪. for লুপ বা for of লুপ দিয়ে স্ট্রিং এর সব ক্যারেক্টার এর উপরে লুপ চালানো যায়। 
+
+৫. toLowerCase এবং toUpperCase দিয়ে কোন স্ট্রিং কে সব ছোট হাতের বা সব বড় হাতের অক্ষর বানিয়ে ফেলা যায় 
+
+৬. স্ট্রিং এর মধ্যে কোন এক বা একাধিক অক্ষর খুঁজতে চাইলে তুমি array এর মতো করে indexOf দিয়ে index চেক করতে পারো 
+
+৭. স্ট্রিং এর মধ্যে এক বা একাধিক অক্ষর আছে কিনা সেটা includes দিয়েও চেক করতে পারো 
+
+৮. এছাড়াও স্ট্রিং এর ছোট একটা অংশ বের করার জন্য split, slice, substr, substring ইউজ করতে পারো 
+
+
+
+.
+
+
+
+এরে:
+
+১. array এর কিছু জিনিস আমরা অলরেডি জানি। index, length, push, pop 
+
+২. for লুপ বা for of লুপ দিয়ে array এর সব উপাদান এর উপরে লুপ চালানো যায়। 
+
+৩. array এর মধ্যে কোন উপাদান খুঁজতে চাইলে তুমি array এর মধ্যে indexOf দিয়ে index চেক করতে পারো 
+
+৪. আবার array এর মধ্যে এক উপাদান আছে কিনা সেটা includes দিয়েও চেক করতে পারো 
+
+৫. এছাড়াও array এর ছোট একটা অংশ বের করার জন্য slice, splice ইউজ করতে পারো 
+
+৬. splice জিনিসটা একটু প্যাচানো। এখন বুঝতে না পারলেও দেখে রাখো 
+
+৭. array এর মধ্যে তুমি চাইলে উপাদানগুলোকে sort করতে পারো। reverse করতে পারো। তবে সংখ্যাওয়ালা array কে sort করতে গেলে ঝামেলা হয়। সেটা আপাতত পুরা না বুঝলেও মাথায় রাইখো 
+
+
+
+.
+
+অন্যান্য জিনিস: 
+
+আমরা আজকে আরো তিনটা ছোট এবং মজার জিনিস দেখবো। একটা হচ্ছে যুক্তি তর্ক করার arguments 
+
+তারপর আছে কমন কিছু Error নিয়ে আলোচনা। এবং তারপর আছে Try-catch আর সবার লাস্টে আছে Date object ছোট একটু কথা বার্তা। 
+
+.
+
+আজকের মডিউলটা ইজি মুডে দেখো। 
+
+
+
+কনসেপচুয়াল সেশন আগামীকাল 
+
+যারা Dom এবং event হ্যান্ডেল করার কনসেপ্টগুলো ধরতে পারেনি তাদের জন্য স্পেশালভাবে আসতেছে-- কনসেপচুয়াল সেশন। সেখানে একটা ছোট সাইট এ কিভাবে ধরে ধরে ইভেন্ট যোগ করা হয় তা আরেকটু ডিফারেন্টভাবে আলোচনা করা হবে। এই কন্সেপচুয়াল এ নতুন কিছু আলোচনা করা হবে না। আমাদের মডিউল এ আলোচনা করা বিষয়গুলাই আরেকটু ডিফারেন্টভাবে আলোচনা করা হবে। সো, শুধুমাত্র যারা কনসেপ্টগুলা ধরতে পারোনি তারাই জয়েন করো। এই সেশন এর টাইম সম্পর্কে আগামীকাল গরূপে পোস্ট দিয়ে দেয়া হবে। 
+
+
+
+
+
+
+
+বোনাস কন্টেন্ট: 
+
+আগামীকাল সকালে আমি একটা poll খুলে দিবো। যেখানে তুমি লিখে দিতে পারবে, এই মাইলস্টোন এর কোন কোন জিনিসগুলো তুমি বুঝতে পারো নাই। তাহলে সেই অনুসারে আমি কিছু বোনাস ভিডিও বানিয়ে দিবো। লাইভ এ এসে টপিকগুলো ডিসকাস করবো। আগামীকাল এর পরেরদিন রাত ৯.০০ এর দিকে আমি লাইভে আসবো। সো, dom manipulation রিলেটেড কোন প্রশ্ন বা কনফেশন থাকলে আগামীকাল যে poll দিবো সেটার নিচে কমেন্ট করে জানায় রাইখো। 
+
+
+
+.
+
+If you want to be better than everyone else, work harder than everyone else.
+
+
+
+
