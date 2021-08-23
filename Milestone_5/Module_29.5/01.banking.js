@@ -14,18 +14,18 @@ function updateTotalFiled(totalFiledId, inputAmount) {
     depositeTotal.innerText = totalAmount;
 }
 
-// function updateBlance(inputAmount, isAdd) {
-//     const balanceTotal = document.getElementById('totalMoney');
-//     const balnceAmount = parseFloat(balanceTotal.innerText);
+function updateBlance(inputAmount, isAdd) {
+    const balanceTotal = document.getElementById('totalMoney');
+    const balnceAmount = parseFloat(balanceTotal.innerText);
 
-//     if (isAdd == true) {
-//         const newTotalBalance = balnceAmount + inputAmount;
-//         balanceTotal.innerText = newTotalBalance;
-//     } else {
-//         const newTotalBalance = balnceAmount - inputAmount;
-//         balanceTotal.innerText = newTotalBalance;
-//     }
-// }
+    if (isAdd == true) {
+        const newTotalBalance = balnceAmount + inputAmount;
+        balanceTotal.innerText = newTotalBalance;
+    } else {
+        const newTotalBalance = balnceAmount - inputAmount;
+        balanceTotal.innerText = newTotalBalance;
+    }
+}
 
 document.getElementById('depositeButton').addEventListener('click', function () {
     const inputAmount = getInputValue('depositeAmount');
@@ -38,14 +38,14 @@ document.getElementById('depositeButton').addEventListener('click', function () 
 
 // // Withdrow
 
-// document.getElementById('withdrowButton').addEventListener('click', function () {
-//     const newdrowAmount = getInputValue('withdrowAmount');
+document.getElementById('withdrowButton').addEventListener('click', function () {
+    const newdrowAmount = getInputValue('withdrowAmount');
 
-//     if (newdrowAmount > 0) {
+    if (newdrowAmount > 0) {
         
-//         updateTotalFiled('withdrowMoney', newdrowAmount)
-//         updateBlance(newdrowAmount, false);
-//     }
+        updateTotalFiled('withdrowMoney', newdrowAmount)
+        updateBlance(newdrowAmount, false);
+    }
 
 
-// })
+})
