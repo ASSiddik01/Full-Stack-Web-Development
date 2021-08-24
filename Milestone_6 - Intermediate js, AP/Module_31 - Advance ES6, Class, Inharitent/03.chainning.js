@@ -22,4 +22,4 @@ const company = {
 
 }
 
-console.log(company?.app?.web.head);
+console.log(company.department?.web.head);
