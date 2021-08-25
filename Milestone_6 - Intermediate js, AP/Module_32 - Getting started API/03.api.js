@@ -17,5 +17,10 @@ fetch('https://jsonplaceholder.typicode.com/photos')
 }
 
 function display(data) {
-    console.log(data);
+    const ul = document.getElementById('user_list');
+    for (const user of data) {
+        const li = document.createElement('li');
+        li.innerText = `Name: ${user.name} || Email: ${user.email}`;
+        ul.appendChild(li);
+    }
 }
