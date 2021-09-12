@@ -1,6 +1,17 @@
+const displayLocalStorageCart = () => {
+    const cart = getCart();
+    for (const name in cart) {
+        displayProduct(name);
+    }
+}
+
 const addItem = () => {
     const nameField = document.getElementById('product_name')
     const name = nameField.value;
+
+    if (!name) {
+        return;
+    }
     //Display Products
     displayProduct(name);
 
@@ -32,7 +43,19 @@ const getCart = () => {
 
 const addProductToCart = name => {
     const cart = getCart();
-    cart[name] = 1;
+    if (cart[name]) {
+        cart[name] = cart[name] + 1;
+    } else {
+        cart[name] = 1;
+    }
     const cartStringfied = JSON.stringify(cart);
     localStorage.setItem('cart', cartStringfied);
 }
+
+const placeOrder = () => {
+    document.getElementById('products').textContent = '';
+    localStorage.removeItem('cart');
+}
+
+
+displayLocalStorageCart();
