@@ -1,4 +1,4 @@
 "use strict";
-const name = "Abu Shama";
+const myName = "Abu Shama";
 console.log("hello");
-console.log(name);
+console.log(myName);
