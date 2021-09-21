@@ -4,25 +4,20 @@ const name = 'Abu Shama';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <div className="container">
-          <h1>My Name {name}</h1>
-        </div>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <About></About>
+      <About></About>
+      <About></About>
+      <About></About>
+      <About></About>
     </div>
   );
 }
-
+function About() {
+  return (
+    <div className="about">
+      <h2>Name: {name}</h2>
+      <h4>Occupetion: Student</h4>
+    </div>
+  );
+}
 export default App;
