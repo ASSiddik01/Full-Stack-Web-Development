@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { useState } from 'react';
+import {useEffect, useState } from 'react';
 const name = 'Abu Shama';
 const cinema = [
   {name:'Salman Shah', movie:'Shopner Nayok'},
@@ -23,7 +23,10 @@ function App() {
       {/* {
         cinema.map(cinema => <Cinema movie={cinema.movie } name={cinema.name } ></Cinema>)
       } */}
-      <Counter></Counter>
+
+      {/* <Counter></Counter> */}
+
+      <ExternalUsers></ExternalUsers>
 
     </div>
   );
@@ -57,22 +60,50 @@ function App() {
 // }
 
 
-function Counter() {
-  const [count, setCount] = useState(1);
-  const increase = () => {
-    const newCount = count + 1;
-    setCount(newCount)
-  };
-  const decrease = () => {
-    const newCount = count - 1;
-    setCount(newCount)
-  };
+// function Counter() {
+//   const [count, setCount] = useState(1);
+//   const increase = () => {
+//     const newCount = count + 1;
+//     setCount(newCount)
+//   };
+//   const decrease = () => {
+//     const newCount = count - 1;
+//     setCount(newCount)
+//   };
+//   return (
+//     <div className="">
+//       <h1>Count: {count} </h1>
+//       <button onClick={increase}>Increase</button>
+//       <button onClick={decrease}>Decrease</button>
+//     </div>
+//   )
+// }
+
+function ExternalUsers() {
+  const [users, setUsers] = useState([]);
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then(res => res.json())
+      .then(data => setUsers(data));
+  }, [])
+
+
   return (
-    <div className="">
-      <h1>Count: {count} </h1>
-      <button onClick={increase}>Increase</button>
-      <button onClick={decrease}>Decrease</button>
+    <div>
+      <h1>External Users</h1>
+      {
+        users.map(user => <User name={user.name} email={user.email}></User>)
+      }
     </div>
   )
+}
+
+function User(props) {
+  return (
+    <div className="about">
+      <h2>Name: {props.name}</h2>
+      <h4>Email: {props.email}</h4>
+    </div>
+  );
 }
 export default App;
