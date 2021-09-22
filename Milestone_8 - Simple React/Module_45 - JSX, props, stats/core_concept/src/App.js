@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 const name = 'Abu Shama';
 const cinema = [
   {name:'Salman Shah', movie:'Shopner Nayok'},
@@ -19,10 +20,10 @@ function App() {
       <Friend name="Salman" address='Rangpur'></Friend>
       <Friend name="Shamim" address='Noakhali'></Friend> */}
       
-      {
+      {/* {
         cinema.map(cinema => <Cinema movie={cinema.movie } name={cinema.name } ></Cinema>)
-      }
-
+      } */}
+      <Counter></Counter>
 
     </div>
   );
@@ -46,11 +47,31 @@ function App() {
 // }
 
 
-function Cinema(props) {
+// function Cinema(props) {
+//   return (
+//     <div className="about">
+//       <h1>Movie name: {props.movie}</h1>
+//       <h3>Nayok name: {props.name}</h3>
+//     </div>
+//   )
+// }
+
+
+function Counter() {
+  const [count, setCount] = useState(1);
+  const increase = () => {
+    const newCount = count + 1;
+    setCount(newCount)
+  };
+  const decrease = () => {
+    const newCount = count - 1;
+    setCount(newCount)
+  };
   return (
-    <div className="about">
-      <h1>Movie name: {props.movie}</h1>
-      <h3>Nayok name: {props.name}</h3>
+    <div className="">
+      <h1>Count: {count} </h1>
+      <button onClick={increase}>Increase</button>
+      <button onClick={decrease}>Decrease</button>
     </div>
   )
 }
