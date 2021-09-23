@@ -11,7 +11,7 @@ function Countries() {
         .then(data => setConuntries(data));
     },[])
     return (
-      <div className="d">
+      <div className="">
         <h1>World Tour</h1>
         <h2>Load form own component file</h2>
         <h3>Available Conuntry: {countries.length}</h3>
@@ -28,7 +28,7 @@ const Country = props => {
   const { name, capital, population, region } = props.country;
   console.log(props.country)
     return (
-      <div className="country">
+      <div className="country bg-info">
         <h4>Country: {name} </h4>
         <p>Capital: {capital} </p>
         <p><small>Region:{region} </small></p>
