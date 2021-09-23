@@ -15,9 +15,11 @@ function Countries() {
         <h1>World Tour</h1>
         <h2>Load form own component file</h2>
         <h3>Available Conuntry: {countries.length}</h3>
+        <div className="countries_container">
         {
           countries.map(country=><Country country={country}></Country>)
         }
+        </div>
       </div>
     )
   }
