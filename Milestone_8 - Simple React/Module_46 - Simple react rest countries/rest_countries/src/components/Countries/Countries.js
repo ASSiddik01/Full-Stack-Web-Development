@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import './Countries.css'
 
 
 function Countries() {
@@ -15,18 +16,21 @@ function Countries() {
         <h2>Load form own component file</h2>
         <h3>Available Conuntry: {countries.length}</h3>
         {
-          countries.map(country=><Country name={country.name} capital={country.capital} population={country.population}></Country>)
+          countries.map(country=><Country country={country}></Country>)
         }
       </div>
     )
   }
   
-  const Country = props => {
+const Country = props => {
+  const { name, capital, population, region } = props.country;
+  console.log(props.country)
     return (
-      <div className="">
-        <h4>Country: {props.name} </h4>
-        <p>Capital: {props.capital} </p>
-        <p>Population: {props.population} </p>
+      <div className="country">
+        <h4>Country: {name} </h4>
+        <p>Capital: {capital} </p>
+        <p><small>Region:{region} </small></p>
+        <p>Population: {population} </p>
       </div>
     )
   }
