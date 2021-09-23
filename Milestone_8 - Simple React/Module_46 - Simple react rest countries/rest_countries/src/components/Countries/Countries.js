@@ -15,7 +15,7 @@ function Countries() {
         <h2>Load form own component file</h2>
         <h3>Available Conuntry: {countries.length}</h3>
         {
-          countries.map(country=><Country name={country.name} capital={country.capital}></Country>)
+          countries.map(country=><Country name={country.name} capital={country.capital} population={country.population}></Country>)
         }
       </div>
     )
@@ -24,8 +24,9 @@ function Countries() {
   const Country = props => {
     return (
       <div className="">
-        <h4>Country:{props.name} </h4>
-        <p>Capital:{props.capital} </p>
+        <h4>Country: {props.name} </h4>
+        <p>Capital: {props.capital} </p>
+        <p>Population: {props.population} </p>
       </div>
     )
   }
