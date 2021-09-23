@@ -20,7 +20,19 @@ function Countries() {
   return (
     <div className="d">
       <h1>World Tour</h1>
-      <h3>Available Conuntry: {countries.length }</h3>
+      <h3>Available Conuntry: {countries.length}</h3>
+      {
+        countries.map(country=><Country name={country.name} capital={country.capital}></Country>)
+      }
+    </div>
+  )
+}
+
+const Country = props => {
+  return (
+    <div className="">
+      <h4>Country:{props.name} </h4>
+      <p>Capital:{props.capital} </p>
     </div>
   )
 }
