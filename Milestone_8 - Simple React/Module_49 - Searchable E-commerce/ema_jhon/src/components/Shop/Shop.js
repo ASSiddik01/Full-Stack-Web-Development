@@ -16,12 +16,16 @@ const Shop = () => {
     }, []);
 
     useEffect(() => {
-        const savedCart = getStoredCart();
-        for (const key in savedCart) {
-            const addedProduct = products.find(product=>product.key === key)
-            console.log(key, addedProduct);
+        if (products.length) {
+            const savedCart = getStoredCart();
+            const storedCart = [];
+            for (const key in savedCart) {
+                const addedProduct = products.find(product => product.key === key);
+                storedCart.push(addedProduct);
+            }
+            setCart(storedCart);
         }
-    },[])
+    }, [products])
     
     const addToCartHandeler = product => {
         const newCart = [...cart, product];
