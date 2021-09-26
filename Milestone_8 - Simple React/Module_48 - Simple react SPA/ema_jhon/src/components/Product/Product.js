@@ -13,6 +13,7 @@ const Product = (props) => {
                 <p><small>by: {seller}</small></p>
                 <p>Price: {price}</p>
                 <p><small>only {stock} left in stock - order soon</small></p>
+                <button className="btn_regular" > Add to Cart</button>
             </div>
         </div>
     );
