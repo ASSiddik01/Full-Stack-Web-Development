@@ -9,10 +9,13 @@
     font-weight: 400;
 }
 .btn_regular{
-    background-color: goldenrod;
+    background-color: gold;
     width: 150px;
     height: 25px;
     border: 1px solid gray;
     border-radius: 5px;
     cursor: pointer;
+}
+.icon_color{
+    color: gold;
 }
