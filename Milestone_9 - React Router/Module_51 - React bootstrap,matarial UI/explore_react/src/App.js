@@ -1,19 +1,25 @@
+import { useEffect, useState } from 'react';
+import { Row, Spinner } from 'react-bootstrap';
 import './App.css';
+import News from './components/News/News';
 
 function App() {
+  const [news, setNews] = useState([]);
+  useEffect(()=> {
+    fetch('https://newsapi.org/v2/everything?q=tesla&from=2021-08-30&sortBy=publishedAt&apiKey=dc3e90e28df444c985a13bf882cdac7d')
+      .then(res => res.json())
+      .then(data => setNews(data.articles));
+  },[])
   return (
-    // <div className="row row-cols-1 row-cols-md-3 g-4">
-    //   {
-    //     items.map(item => <Card
-    //       item={item}
-    //     ></Card>)
-    //   }
-    // </div>
     <div className='App'>
-      <Button variant='primary'>Primary</Button>
-      <Spinner animation="border" role="status">
-        <span className="visually-hidden">Loading...</span>
-      </Spinner>
+      {news.length === 0 ?
+        <Spinner animation="grow" />
+       :
+        <Row xs={1} md={3} className="g-4">
+        {
+          news.map(nw=> <News news={nw}></News>)
+        }
+      </Row>}
     </div>
   );
 }
