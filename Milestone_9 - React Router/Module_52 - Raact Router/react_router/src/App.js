@@ -4,6 +4,7 @@ import Friends from './Components/Friends/Friends';
 import About from './Components/About/About';
 import NotFound from './Components/NotFound/NotFound';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Header from './Components/Header/Header';
 
 
 
@@ -11,6 +12,7 @@ function App() {
   return (
     <div className="App">
       <Router>
+        <Header></Header>
         <Switch>
           <Route path='/home'>
             <Home></Home>
