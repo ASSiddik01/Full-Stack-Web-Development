@@ -6,6 +6,7 @@ import NotFound from './Components/NotFound/NotFound';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from './Components/Header/Header';
 import FriendDetails from './Components/FriendDetails/FriendDetails';
+import Culture from './Components/Culture/Culture';
 
 
 
@@ -21,7 +22,7 @@ function App() {
           <Route exact path='/'>
             <Home></Home>
           </Route>
-          <Route path='/about'>
+          <Route exact path='/about'>
             <About></About>
           </Route>
           <Route path='/friends'>
@@ -29,6 +30,9 @@ function App() {
           </Route>
           <Route path='/friend/:friendId'>
             <FriendDetails/>
+          </Route>
+          <Route exact path='/about/culture'>
+            <Culture></Culture>
           </Route>
           <Route>
             <NotFound></NotFound>
