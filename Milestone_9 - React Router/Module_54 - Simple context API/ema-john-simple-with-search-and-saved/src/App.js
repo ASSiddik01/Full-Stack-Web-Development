@@ -7,6 +7,7 @@ import { Route } from 'react-router-dom';
 import OrderReview from './components/OrderReview/OrderReview';
 import Inventory from './components/Inventory/Inventory';
 import NotFound from './components/NotFound/NotFound';
+import PlaceOrder from './components/PlaceOrder/PlaceOrder';
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
           </Route>
           <Route path='/inventory'>
             <Inventory/>
+          </Route>
+          <Route path='/placeorder'>
+            <PlaceOrder></PlaceOrder>
           </Route>
           <Route>
             <NotFound/>
