@@ -17,13 +17,16 @@ function App() {
           <Route exact path='/'>
             <Shop></Shop>
           </Route>
+          <Route exact path='/shop'>
+            <Shop></Shop>
+          </Route>
           <Route path='/review'>
             <OrderReview></OrderReview>
           </Route>
           <Route path='/inventory'>
             <Inventory/>
           </Route>
-          <Route path='*'>
+          <Route>
             <NotFound/>
           </Route>
         </Switch>
