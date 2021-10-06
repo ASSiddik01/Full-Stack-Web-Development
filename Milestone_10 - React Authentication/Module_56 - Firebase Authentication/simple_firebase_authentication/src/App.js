@@ -1,16 +1,19 @@
-import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+import { getAuth, signInWithPopup, GoogleAuthProvider, GithubAuthProvider } from 'firebase/auth';
 import './App.css';
 import inatializaAutentication from './FireBase/firebase.inatialize';
 import { useState } from 'react';
 
 inatializaAutentication();
 const provider = new GoogleAuthProvider();
+const githubProvider = new GithubAuthProvider();
+const auth = getAuth();
 
 function App() {
   const [user, setUser] = useState([])
 
+
+  // Google Sign In
   const signInHandeler = () => {
-    const auth = getAuth();
     signInWithPopup(auth, provider)
       .then(result => {
         const { displayName, email, photoURL } = result.user;
@@ -26,12 +29,30 @@ function App() {
         console.log(error.message);
       })
   }
+
+  // GitHub Sign In
+  const githubSignIn = () => {
+    signInWithPopup(auth, githubProvider)
+    .then(result => {
+      const { displayName, email, photoURL } = result.user;
+      console.log(photoURL)
+      const loggedInUser = {
+        name: displayName,
+        email: email,
+        photo: photoURL,
+      }
+      setUser(loggedInUser);
+    })
+  }
+
   return (
     <div className="App">
       <button onClick={signInHandeler}>Google Sing In</button>
       <br />
+      <button onClick={githubSignIn} >Github Sign In</button>
+      <br />
       {
-        user.email && <div>
+        user.name && <div>
           <h2>Welcome {user.name} </h2>
           <p>Your email: {user.email} </p>
           <img src={user.photo} alt="" />
