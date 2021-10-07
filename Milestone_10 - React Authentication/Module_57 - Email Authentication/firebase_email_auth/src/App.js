@@ -1,5 +1,5 @@
 import './App.css';
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import inatializaAutentication from "./Firebase/firebase.inatialize"
 import { useState } from 'react';
 
@@ -10,6 +10,7 @@ function App() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [isLogin, setIsLogin] = useState(false)
 
 
   // Submit handle
@@ -23,6 +24,24 @@ function App() {
       setError('At least one number');
       return;
     }
+    isLogin ? processLogin(email, password) : signUpNewUser(email, password);
+  }
+
+  const processLogin = (email, password) => {
+    signInWithEmailAndPassword(auth, email, password)
+      .then((result) => {
+        
+        const user = result.user;
+        console.log(user)
+        
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        setError(errorMessage);
+      });
+  }
+
+  const signUpNewUser = (email, password) => {
     createUserWithEmailAndPassword(auth, email, password)
       .then(result => {
         const user = result.user;
@@ -34,6 +53,9 @@ function App() {
         setError(errorMessage);
       })
   }
+
+
+
   // Email handle
   const handleEmail = e => {
     setEmail(e.target.value);
@@ -43,12 +65,17 @@ function App() {
     setPassword(e.target.value);
   }
 
+  // Check Handle
+  const toggleLogin = e => {
+    setIsLogin(e.target.checked);
+  }
+
 
 
   return (
     <div className="App">
       <form onSubmit={handleSignUp} >
-        <h1>Please! Sign Up</h1>
+        <h1 className='text-primary'>Please! {isLogin ? 'Sign In' : 'Sign Up'}</h1>
         <div className="row mb-3">
           <label htmlFor="inputEmail3" className="col-sm-2 col-form-label">Email:</label>
           <div className="col-sm-10">
@@ -61,8 +88,19 @@ function App() {
             <input onBlur={handlePassword} type="password" className="form-control" id="inputPassword3" />
           </div>
         </div>
+        <div className="row mb-3">
+          <div className="col-sm-10 offset-sm-2">
+            <div className="form-check">
+              <input onChange={toggleLogin} className="form-check-input" type="checkbox" id="gridCheck1" />
+              <label className="form-check-label" htmlFor="gridCheck1">
+                Already Registerd?
+              </label>
+            </div>
+          </div>
+        </div>
         <div className="row mb-3">{error}</div>
-        <button type="submit" className="btn btn-primary">Sign Up</button>
+
+        <button type="submit" className="btn btn-primary">{isLogin ? 'Sign In' : 'Sign Up'}</button>
       </form>
     </div>
   );
