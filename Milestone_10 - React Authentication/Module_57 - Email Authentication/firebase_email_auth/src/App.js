@@ -1,5 +1,5 @@
 import './App.css';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, sendPasswordResetEmail } from "firebase/auth";
 import inatializaAutentication from "./Firebase/firebase.inatialize"
 import { useState } from 'react';
 
@@ -30,10 +30,11 @@ function App() {
   const processLogin = (email, password) => {
     signInWithEmailAndPassword(auth, email, password)
       .then((result) => {
-        
+
         const user = result.user;
-        console.log(user)
-        
+        console.log(user);
+        setError('');
+
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -47,11 +48,32 @@ function App() {
         const user = result.user;
         console.log(user);
         setError('');
+        emailVarify();
       })
       .catch((error) => {
         const errorMessage = error.message;
         setError(errorMessage);
       })
+  }
+
+  const emailVarify = () => {
+    sendEmailVerification(auth.currentUser)
+      .then(() => {
+        // Email verification sent!
+        // ...
+      });
+  }
+
+  const handlePasswordReset = () => {
+    sendPasswordResetEmail(auth, email)
+      .then(() => {
+        
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        setError(errorMessage);
+        // ..
+      });
   }
 
 
@@ -101,6 +123,7 @@ function App() {
         <div className="row mb-3">{error}</div>
 
         <button type="submit" className="btn btn-primary">{isLogin ? 'Sign In' : 'Sign Up'}</button>
+        <button onClick={handlePasswordReset} type="button" className="btn btn-secondary btn-sm">Reset Password</button>
       </form>
     </div>
   );
