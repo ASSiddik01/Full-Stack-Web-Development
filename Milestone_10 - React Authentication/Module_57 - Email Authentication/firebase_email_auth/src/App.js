@@ -1,5 +1,5 @@
 import './App.css';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, sendPasswordResetEmail } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, sendPasswordResetEmail, updateProfile } from "firebase/auth";
 import inatializaAutentication from "./Firebase/firebase.inatialize"
 import { useState } from 'react';
 
@@ -7,6 +7,7 @@ inatializaAutentication()
 const auth = getAuth();
 
 function App() {
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -32,7 +33,6 @@ function App() {
       .then((result) => {
 
         const user = result.user;
-        console.log(user);
         setError('');
 
       })
@@ -49,11 +49,21 @@ function App() {
         console.log(user);
         setError('');
         emailVarify();
+        setUserName();
       })
       .catch((error) => {
         const errorMessage = error.message;
         setError(errorMessage);
       })
+  }
+
+  const setUserName = () => {
+    updateProfile(auth.currentUser, { displayName: name })
+    .then(() => {
+      
+    }).catch((error) => {
+      
+    });
   }
 
   const emailVarify = () => {
@@ -67,7 +77,7 @@ function App() {
   const handlePasswordReset = () => {
     sendPasswordResetEmail(auth, email)
       .then(() => {
-        
+
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -92,22 +102,35 @@ function App() {
     setIsLogin(e.target.checked);
   }
 
+  // Name handle
+  const namehandle = e => {
+    setName(e.target.value);
+  }
+
 
 
   return (
     <div className="App">
       <form onSubmit={handleSignUp} >
         <h1 className='text-primary'>Please! {isLogin ? 'Sign In' : 'Sign Up'}</h1>
+
+        {!isLogin && <div className="row mb-3">
+          <label htmlFor="inputName" className="col-sm-2 col-form-label">Name:</label>
+          <div className="col-sm-10">
+            <input onBlur={namehandle} type="text" className="form-control" id="inputName" placeholder='Your Name' />
+          </div>
+        </div>}
+
         <div className="row mb-3">
           <label htmlFor="inputEmail3" className="col-sm-2 col-form-label">Email:</label>
           <div className="col-sm-10">
-            <input onBlur={handleEmail} type="email" className="form-control" id="inputEmail3" />
+            <input onBlur={handleEmail} type="email" className="form-control" id="inputEmail3" placeholder='Your Email' />
           </div>
         </div>
         <div className="row mb-3">
           <label htmlFor="inputPassword3" className="col-sm-2 col-form-label">Password</label>
           <div className="col-sm-10">
-            <input onBlur={handlePassword} type="password" className="form-control" id="inputPassword3" />
+            <input onBlur={handlePassword} type="password" className="form-control" id="inputPassword3" placeholder='Your Password  ' />
           </div>
         </div>
         <div className="row mb-3">
