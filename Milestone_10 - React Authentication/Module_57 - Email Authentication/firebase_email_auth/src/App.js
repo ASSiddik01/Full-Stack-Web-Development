@@ -9,16 +9,30 @@ const auth = getAuth();
 function App() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  
+  const [error, setError] = useState('');
+
 
   // Submit handle
   const handleSignUp = e => {
+    e.preventDefault();
+    if (password.length < 6) {
+      setError('Password should be at least 6 characters');
+      return;
+    }
+    if (!/(?=.*[0-9])/.test(password)) {
+      setError('At least one number');
+      return;
+    }
     createUserWithEmailAndPassword(auth, email, password)
       .then(result => {
         const user = result.user;
         console.log(user);
-    })
-    e.preventDefault();
+        setError('');
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        setError(errorMessage);
+      })
   }
   // Email handle
   const handleEmail = e => {
@@ -47,6 +61,7 @@ function App() {
             <input onBlur={handlePassword} type="password" className="form-control" id="inputPassword3" />
           </div>
         </div>
+        <div className="row mb-3">{error}</div>
         <button type="submit" className="btn btn-primary">Sign Up</button>
       </form>
     </div>
