@@ -1,14 +1,13 @@
-
 import inatializeAuthenticaion from '../FIrebase/firebase.init';
-import { useState } from 'react';
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { useState, useEffect } from 'react';
+import { getAuth, signInWithPopup, GoogleAuthProvider,onAuthStateChanged } from "firebase/auth";
 
 
 inatializeAuthenticaion();
 
 const useFirebase = () => {
     const [user, setUser] = useState({})
-    const [error, setError] = useState({})
+    const [error, setError] = useState('')
 
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
@@ -25,6 +24,17 @@ const useFirebase = () => {
                 setError(error.message)
             })
     }
+
+    useEffect(() => {
+        onAuthStateChanged(auth, user => {
+            if (user){
+                console.log('Clicked',user)
+                setUser(user);
+            }
+        })
+    },[])
+
+
     return {
         user,
         error,
