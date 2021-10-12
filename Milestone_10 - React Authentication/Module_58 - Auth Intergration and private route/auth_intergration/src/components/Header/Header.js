@@ -4,13 +4,15 @@ import './Header.css'
 import useFirebase from '../../hooks/useFirebase';
 
 const Header = () => {
-    const {user} = useFirebase();
+    const { user, logOut } = useFirebase();
     return (
         <div className='header'>
             <Link to='/home'>Home</Link>
             <Link to='/register'>Sign Up</Link>
             <Link to='/login'>Sign In</Link>
-            {user?.email &&<Link>Sign Out</Link>}
+            <br />
+            <span>{user.displayName} </span>
+            {user?.email && <button onClick={logOut}>Sign Out</button>}
         </div>
     );
 };
