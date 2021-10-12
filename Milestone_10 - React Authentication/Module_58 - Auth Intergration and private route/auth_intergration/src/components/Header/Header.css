@@ -1,0 +1,12 @@
+.header a {
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.header {
+    padding: 10px;
+}
+
+a {
+    text-decoration: none;
+}
