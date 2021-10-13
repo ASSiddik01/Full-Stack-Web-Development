@@ -5,6 +5,6 @@ const firebaseConfig = {
     storageBucket: "auth-intergration-1c868.appspot.com",
     messagingSenderId: "639908006172",
     appId: "1:639908006172:web:317f28f92e97f0e79b52d9"
-};
+  };
 
 export default firebaseConfig;
