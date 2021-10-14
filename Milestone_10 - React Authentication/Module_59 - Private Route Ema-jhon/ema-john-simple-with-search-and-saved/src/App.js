@@ -14,8 +14,9 @@ import Register from './components/Register/Register';
 function App() {
   return (
     <div>
-      <Header></Header>
+
       <Router>
+        <Header></Header>
         <Switch>
           <Route exact path='/'>
             <Shop></Shop>
@@ -27,7 +28,7 @@ function App() {
             <OrderReview></OrderReview>
           </Route>
           <Route path='/inventory'>
-            <Inventory/>
+            <Inventory />
           </Route>
           <Route path='/placeorder'>
             <PlaceOrder></PlaceOrder>
@@ -39,7 +40,7 @@ function App() {
             <Register></Register>
           </Route>
           <Route>
-            <NotFound/>
+            <NotFound />
           </Route>
         </Switch>
       </Router>
