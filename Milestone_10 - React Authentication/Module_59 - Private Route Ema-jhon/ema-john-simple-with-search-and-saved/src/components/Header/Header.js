@@ -2,10 +2,10 @@ import React from 'react';
 import logo from '../../images/logo.png';
 import './Header.css';
 import { NavLink } from 'react-router-dom';
-import useFirebase from '../../hooks/useFirebase';
+import useAuth from '../../hooks/useAuth';
 
 const Header = () => {
-    const { user, logOut } = useFirebase();
+    const { user, logOut } = useAuth();
     return (
         <div className="header">
             <img className="logo" src={logo} alt="" />
@@ -13,9 +13,10 @@ const Header = () => {
                 <NavLink to="/shop">Shop</NavLink>
                 <NavLink to="/review">Order Review</NavLink>
                 <NavLink to="/inventory">Manage Inventory</NavLink>
+                {user.email && <span style={{ color: 'white' }}>{user.displayName}  </span>}
                 {user.email ?
-                    <button onClick={logOut} className='btn-regular'>Log Out</button>
-                :
+                    <button onClick={logOut}>Log Out</button>
+                    :
                     <NavLink to="/login">Sign In</NavLink>}
             </nav>
         </div>
