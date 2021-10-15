@@ -42,13 +42,11 @@ const Shop = () => {
         if (exists) {
             const rest = cart.filter(pd => pd.key !== product.key);
             exists.quantity = exists.quantity + 1;
-            newCart = [...rest, product];
-
+            newCart =[...rest, product]
         } else {
-            product.quantity = 1;
+            product.quentity = 1;
             newCart = [...cart, product];
         }
-
         setCart(newCart);
         // save to local storage (for now)
         addToDb(product.key);
@@ -83,8 +81,8 @@ const Shop = () => {
                 </div>
                 <div className="cart-container">
                     <Cart cart={cart}>
-                        <Link to='/review'>
-                            <button className='btn-regular'>Review Order Place</button>
+                        <Link to="/review">
+                            <button className="btn-regular">Review Your Order</button>
                         </Link>
                     </Cart>
                 </div>

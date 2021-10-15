@@ -1,10 +1,10 @@
 import React from 'react';
-import Img from '../../images/giphy.gif'
+import thumbs from "../../images/giphy.gif"
 
 const PlaceOrder = () => {
     return (
         <div>
-            <img src={Img} alt="" />
+            <img src={thumbs} alt="" />
         </div>
     );
 };

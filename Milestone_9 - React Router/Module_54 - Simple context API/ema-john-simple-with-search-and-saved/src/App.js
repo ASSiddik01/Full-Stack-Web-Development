@@ -12,8 +12,8 @@ import PlaceOrder from './components/PlaceOrder/PlaceOrder';
 function App() {
   return (
     <div>
-      <Header></Header>
       <Router>
+        <Header></Header>
         <Switch>
           <Route exact path='/'>
             <Shop></Shop>
@@ -25,13 +25,13 @@ function App() {
             <OrderReview></OrderReview>
           </Route>
           <Route path='/inventory'>
-            <Inventory/>
+            <Inventory />
           </Route>
           <Route path='/placeorder'>
-            <PlaceOrder></PlaceOrder>
+            <PlaceOrder />
           </Route>
-          <Route>
-            <NotFound/>
+          <Route path="*">
+            <NotFound />
           </Route>
         </Switch>
       </Router>
