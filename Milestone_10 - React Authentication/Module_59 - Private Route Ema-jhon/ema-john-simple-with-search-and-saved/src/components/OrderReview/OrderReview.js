@@ -20,8 +20,8 @@ const OrderReview = () => {
 
     const placeOrderHandler = () => {
         history.push('/shipping');
-        // setCart([]);
-        // clearTheCart();
+        setCart([]);
+        clearTheCart();
     }
 
 
