@@ -11,8 +11,8 @@ import NotFound from './components/NotFound/NotFound';
 function App() {
   return (
     <div>
-      <Header></Header>
       <Router>
+        <Header></Header>
         <Switch>
           <Route exact path='/'>
             <Shop></Shop>
@@ -24,10 +24,10 @@ function App() {
             <OrderReview></OrderReview>
           </Route>
           <Route path='/inventory'>
-            <Inventory/>
+            <Inventory />
           </Route>
           <Route>
-            <NotFound/>
+            <NotFound />
           </Route>
         </Switch>
       </Router>
