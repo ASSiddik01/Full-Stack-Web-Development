@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name": "Service_1",
+        "price": 2000,
+        "time": 2,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas cumque iure, deleniti itaque odio ullam iusto dolor neque officia saepe!",
+        "img": "https://i.ibb.co/10JKyQ7/1.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Service_2",
+        "price": 2000,
+        "time": 2,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas cumque iure, deleniti itaque odio ullam iusto dolor neque officia saepe!",
+        "img": "https://i.ibb.co/HzH9nfS/2.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Service_3",
+        "price": 2000,
+        "time": 2,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas cumque iure, deleniti itaque odio ullam iusto dolor neque officia saepe!",
+        "img": "https://i.ibb.co/zb9ktG0/3.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Service_4",
+        "price": 2000,
+        "time": 2,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas cumque iure, deleniti itaque odio ullam iusto dolor neque officia saepe!",
+        "img": "https://i.ibb.co/Sr31p1Y/4.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Service_5",
+        "price": 2000,
+        "time": 2,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas cumque iure, deleniti itaque odio ullam iusto dolor neque officia saepe!",
+        "img": "https://i.ibb.co/mRywSMS/5.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Service_6",
+        "price": 2000,
+        "time": 2,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas cumque iure, deleniti itaque odio ullam iusto dolor neque officia saepe!",
+        "img": "https://i.ibb.co/Sr4FC8x/6.jpg"
+    }
+]

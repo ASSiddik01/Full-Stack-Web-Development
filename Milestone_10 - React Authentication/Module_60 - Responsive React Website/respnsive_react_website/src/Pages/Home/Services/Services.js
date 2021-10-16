@@ -1,14 +1,24 @@
 import React from 'react';
-import service_1 from '../../../images/services/1.jpg';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import Service from '../Service/Service';
 
-const services = [
-    {name: 'Replace Tire', price: 2000, time: 2, img:service_1}
-]
 
 const Services = () => {
+    const [services, setServices] = useState([]);
+    useEffect(() => {
+        fetch('./services.json')
+            .then(res => res.json())
+            .then(data => setServices(data));
+    }, [])
     return (
         <div>
-
+            {
+                services.map(service => <Service
+                    key={service.id}
+                    service={service}
+                ></Service>)
+            }
         </div>
     );
 };
