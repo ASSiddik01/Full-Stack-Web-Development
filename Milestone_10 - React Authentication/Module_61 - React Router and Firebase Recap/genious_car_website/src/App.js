@@ -5,6 +5,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import Home from './Pages/Home/Home/Home';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import NotFound from './Pages/NotFound/NotFound';
+import Booking from './Pages/Booking/Booking/Booking';
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
           </Route>
           <Route path="/home">
             <Home />
+          </Route>
+          <Route path="/booking/:serviceId">
+            <Booking/>
           </Route>
           <Route path="*">
             <NotFound />
