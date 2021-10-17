@@ -6,11 +6,14 @@ import Home from './Pages/Home/Home/Home';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import NotFound from './Pages/NotFound/NotFound';
 import Booking from './Pages/Booking/Booking/Booking';
+import Login from './Pages/Login/Login/Login';
+import Header from './Pages/Shared/Header/Header';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <Header/>
         <Switch>
           <Route exact path="/">
             <Home />
@@ -19,7 +22,10 @@ function App() {
             <Home />
           </Route>
           <Route path="/booking/:serviceId">
-            <Booking/>
+            <Booking />
+          </Route>
+          <Route path="/login">
+            <Login />
           </Route>
           <Route path="*">
             <NotFound />
