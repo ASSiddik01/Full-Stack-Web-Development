@@ -30,14 +30,14 @@ const experts = [
     },
     {
         img: mechanic1,
-        name: 'Andrew Smith',
+        name: 'Androw Smith',
         expertize: '-Engine Expert-'
     },
 ]
 
 const Exparts = () => {
     return (
-        <div className='container'>
+        <div className='container my-5'>
             <h2 className="text-info">Our Exparts</h2>
             <div className="row justify-content-center">
                 {
