@@ -1,10 +1,10 @@
 const firebaseConfig = {
-    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-    messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-    appId: process.env.REACT_APP_FIREBASE_APP_ID,
+    apiKey: "AIzaSyBfZT_C3iydFym_oHjU9DFAhEQXysPEzW8",
+    authDomain: "genius-mechanics-de64b.firebaseapp.com",
+    projectId: "genius-mechanics-de64b",
+    storageBucket: "genius-mechanics-de64b.appspot.com",
+    messagingSenderId: "982931752893",
+    appId: "1:982931752893:web:63a40bb0afd7b4136734d4"
 };
-  
+
 export default firebaseConfig;
