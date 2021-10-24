@@ -19,11 +19,19 @@ app.get('/', (req, res) => {
     res.send('hello Shama, welcome to USA');
 })
 
-
+//  Queary Perameters
 app.get('/users', (req, res) => {
-    res.send(users);
+    const search = req.query.search;
+    if (search) {
+        const searchReasult = users.filter(user => user.name.toLocaleLowerCase().includes(search));
+        res.send(searchReasult);
+    } else {
+        res.send(users);
+    }
 })
 
+
+// Dymanic API
 app.get('/users/:id', (req, res) => {
     const id = req.params.id;
     const user = users[id];
