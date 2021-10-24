@@ -33,6 +33,12 @@ app.get('/users', (req, res) => {
     }
 })
 
+// app.Method
+app.post('/user', (req, res) => {
+    console.log('hitting');
+    res.send('hitted')
+})
+
 
 // Dymanic API
 app.get('/users/:id', (req, res) => {
