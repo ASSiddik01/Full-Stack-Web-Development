@@ -4,6 +4,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 app.use(cors());
+app.use(express.json());
 
 
 const users = [
@@ -34,9 +35,12 @@ app.get('/users', (req, res) => {
 })
 
 // app.Method
-app.post('/user', (req, res) => {
-    console.log('hitting');
-    res.send('hitted')
+app.post('/users', (req, res) => {
+    const newUser = req.body;
+    newUser.id = users.length
+    users.push(newUser);
+    console.log('hitting',req.body);
+    res.json(newUser)
 })
 
 

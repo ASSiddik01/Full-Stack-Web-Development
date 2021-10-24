@@ -24,14 +24,23 @@ function App() {
     }
     
     // Send data to server
-    fetch('http://localhost:5000/users'{
-      method = 'post',
+    fetch('http://localhost:5000/users',{
+      method: 'post',
       headers: {
         'content-type':'application/json'
       },
-      body: JSON.stringify(newUser);
+      body: JSON.stringify(newUser)
     })
-      .then(res => res.json())
+    .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        const addedUser = data;
+        const newUsers = [...users, addedUser];
+        setUsers(newUsers);
+      });
+    
+    nameRef.current.value = '';
+    emailRef.current.value = '';
     
 
     e.preventDefault();
