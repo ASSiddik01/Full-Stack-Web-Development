@@ -9,7 +9,15 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 client.connect(err => {
   const collection = client.db("test").collection("devices");
   // perform actions on the collection object
-  client.close();
+    console.log('Mongo DB');
+    const user = { name: "Siddik", email: "siddik@gmail.com", phone: "0199999999999" };
+    collection.insertOne(user)
+    .then(() => {
+        console.log('Data Send');
+    })
+
+
+//   client.close();
 });
 
 app.get('/', (req, res) => {
