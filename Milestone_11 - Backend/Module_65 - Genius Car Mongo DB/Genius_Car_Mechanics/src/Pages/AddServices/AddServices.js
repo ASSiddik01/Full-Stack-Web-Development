@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import { useForm } from "react-hook-form";
 import './AddServices.css';
 
@@ -6,6 +7,12 @@ const AddServices = () => {
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
         console.log(data);
+        axios.post('http://localhost:5000/services', data)
+            .then(res => {
+                if (res.data.insertedId) {
+                    alert('added successfully');
+                }
+            })
     }
     return (
         <div className='add_service'>
