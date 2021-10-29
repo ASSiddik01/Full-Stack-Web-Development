@@ -17,6 +17,13 @@ async function run() {
       await client.connect();
       const database = client.db("mydata");
       const usersCollection = database.collection("alluser");
+
+      // Get api
+      app.get('/users', async (req, res) => {
+        const cursor = usersCollection.find({});
+        const users = await cursor.toArray();
+        res.send(users);
+      })
       
       // Post api
       app.post('/users', async (req, res) => {
