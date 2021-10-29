@@ -38,23 +38,25 @@ async function run() {
         })
 
 
-
         // POST API
         app.post('/services', async (req, res) => {
             const service = req.body;
             console.log('post hitting', service)
 
-            // const service = {
-            //     "name": "ENGINE DIAGNOSTIC",
-            //     "price": "300",
-            //     "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
-            //     "img": "https://i.ibb.co/dGDkr4v/1.jpg"
-            // }
-
             const result = await servicesCollection.insertOne(service);
             console.log(result);
             res.json(result);
+        });
+
+        // DELETE API
+        app.delete('/services/:id', async (req, res) => {
+            const id = req.params.id;
+            const query = { _id: ObjectId(id) };
+            const result = await servicesCollection.deleteOne(query);
+            res.json(result);
         })
+
+
     }
     finally {
         // await client.close();
