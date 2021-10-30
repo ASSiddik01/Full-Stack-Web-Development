@@ -30,16 +30,24 @@ async function run() {
             const count = await cursor.count();
             let products;
             if (page) {
-                products = await cursor.skip(page*size).limit(size).toArray();
+                products = await cursor.skip(page * size).limit(size).toArray();
             } else {
                 products = await cursor.toArray();
             }
 
-            
+
             res.send({
                 count,
                 products
             });
+        });
+
+        // Use POST by keys
+        app.post('/products/byKeys', async (req, res) => {
+            const keys = req.body;
+            const query = { key: { $in: keys } }
+            const products = await productCollection.find(query).toArray();
+            res.json(products);
         })
 
 
